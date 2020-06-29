@@ -1,0 +1,35 @@
+{
+    "name": "青豆",
+    "url": "www.xinqingdou.com",
+    "version": 100,
+    "search": {
+        "url": "https://www.xinqingdou.com/search.html@post->searchtype=all&searchkey=${key}",
+        "charset": "utf-8",
+        "list": "#sitembox > dl",
+        "name": "h3 > a",
+        "author": "dd:nth-child(3) > span:nth-child(1)",
+        "cover": "dt > a > img",
+        "detail": "h3 > a"
+    },
+    "detail": {
+        "name": "meta[property=og:novel:book_name]@attr->content",
+        "author": "meta[property=og:novel:author]@attr->content",
+        "cover": "meta[property=og:image]@attr->content",
+        "summary": "#intro p:nth-child(1)",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content"
+    },
+    "catalog": {
+        "list": "#list > dl > dd",
+        "orderBy": 0,
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#content",
+        "purify": [
+        	"喜欢(.+)更新速度最快\\。"
+        ]
+    }
+}
